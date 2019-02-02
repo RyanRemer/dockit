@@ -1,9 +1,8 @@
-class Project{
-    constructor(){
+export class Project{
+    constructor(title, description){
         self.title = "";
         self.description = "";
         self.assigned = [];
-        self.timeSpent = 0.0;
-        self.timeLeft = 0.0;
+        self.tasks = [];
     }
 }
