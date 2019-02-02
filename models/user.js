@@ -1,5 +1,5 @@
-class User{
-    constructor(){
-        self.name = "";
+export class User{
+    constructor(name){
+        self.name = name;
     }
 }
