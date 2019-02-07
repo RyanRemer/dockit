@@ -26,7 +26,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   selectProjEvent(project) {
-    this.editEvent.emit(project);
+    this.selectEvent.emit(project);
   }
 
 }
