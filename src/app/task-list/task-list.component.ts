@@ -8,7 +8,7 @@ import { Task } from '../models/task';
 })
 export class TaskListComponent implements OnInit {
 
-  @Input() tasks: Task[]:
+  @Input() tasks: Task[];
 
   constructor() { }
 
