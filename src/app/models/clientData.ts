@@ -24,6 +24,16 @@ export class ClientData {
       }
       return null;
     }
+
+    deleteProject(projectName) {
+      var keepProjects = [];
+      for (let i = 0; i < this.projects.length; i++) {
+        if (this.projects[i].title != projectName) {
+          keepProjects.push(this.projects[i]);
+        }
+      }
+      this.projects = keepProjects;
+    }
 }
 
 function getUserData(){

@@ -5,19 +5,19 @@
 
   <div class="bar">
     <div class="left">
-        <div class="title left clickable" (click)="this.selectProjEvent(project.title)">{{project.title}}</div>
-        <div class="clickable" (click)="this.editProjEvent(project.title)"> Edit </div>
+        <div class="title left clickable" (click)="this.selectProject(project.title)">{{project.title}}</div>
+        <div class="clickable" (click)="this.editProject(project.title)"> Edit </div>
     </div>
     <div class="right">
       <div class="space"></div>
       <div class="progress"></div>
     </div>
     <div class="footer">
-      <div class="button clickable">Overview</div>
+      <div class="button clickable" (click)="this.selectProject(project.title)">View Tasks</div>
       <div class="separator"></div>
-      <div class="button clickable">My Tasks</div>
+      <div class="button clickable" (click)="this.editProject(project.title)">Edit Project</div>
       <div class="separator"></div>
-      <div class="button clickable">Unassigned</div>
+      <div class="button clickable" (click)="this.deleteProject(project.title)">Delete Project</div>
     </div>
   </div>
 

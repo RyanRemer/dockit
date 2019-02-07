@@ -61,4 +61,8 @@ export class AppComponent {
     this.selectedProject = ClientData.getInstance().getProject($event);
     //this.selectedProject = $event;
   }
+
+  receiveProjToDelete($event) {
+    ClientData.getInstance().deleteProject($event);
+  }
 }
