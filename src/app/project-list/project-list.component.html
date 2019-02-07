@@ -1,0 +1,10 @@
+
+<div>
+
+<div *ngFor="let project of projects">
+  <div (click)="this.selectProjEvent(project.title)">{{project.title}}</div>
+  <div (click)="this.editProjEvent(project.title)"> Edit </div>
+  <div (click)="this.selectProjEvent(project.title)">{{project.description}}</div>
+</div>
+
+</div>

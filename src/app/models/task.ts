@@ -5,4 +5,5 @@ export class Task{
     assignedTo:User[];
     timeSpent:number;
     timeLeft:number;
+
 }

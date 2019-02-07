@@ -13,4 +13,8 @@ export class Project{
         this.assignedTo = [];
         this.tasks = [];
     }
+
+    addTask(newTask) {
+      this.tasks.push(newTask);
+    }
 }
