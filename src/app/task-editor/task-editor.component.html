@@ -1,0 +1,28 @@
+<form>
+  <div class="form-group">
+    <label for="title">Task Title:</label>
+    <input type="text" class="form-control" id="title" value="{{task.title}}">
+  </div>
+  <div class="form-group">
+    <label for="assignedTo">Assigned To:</label>
+    <input type="text" class="form-control" id="assignedTo" placeholder="Search for Company Employee">
+    <hr>
+    <div style="height: 200px; overflow-y:auto">
+      <div *ngFor="let user of users">
+        <input type="checkbox"> {{user.name}}
+        <hr>
+      </div>
+    </div>
+    
+  </div>
+  <div class="form-group">
+    <label for="timeSpent">Time Spent (Hours):</label>
+    <input type="number" class="form-control" id="timeSpent" value="{{task.timeSpent}}">
+  </div>
+  <div class="form-group">
+    <label for="timeLeft">Time Left (Hours):</label>
+    <input type="number" class="form-control" id="timeLeft" value="{{task.timeLeft}}">
+  </div>
+  <button type="button" class="btn btn-outline-primary btn-block">Update Task</button>
+  <button type="button" class="btn btn-outline-danger btn-block">Delete Task </button>
+</form>

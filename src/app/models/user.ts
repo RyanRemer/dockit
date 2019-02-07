@@ -1,5 +1,6 @@
 export class User{
+    name:string;
     constructor(name){
-        self.name = name;
+        this.name = name;
     }
 }
