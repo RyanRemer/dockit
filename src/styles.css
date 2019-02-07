@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.light_background {
+  background-color: #E1EBF2;
+}
+
+.white-background {
+  background-color: white;
+}

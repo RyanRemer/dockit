@@ -1,0 +1,49 @@
+
+.bar {
+  width: 100%;
+  background-color: white;
+  padding: 25px;
+  margin: auto;
+  height: 125px;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  color: #50656D;
+}
+
+.footer {
+  clear: both;
+  margin: auto;
+}
+
+.button {
+  float: left;
+  background-color: #6CD0FF;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.left {
+  width: 75%;
+  float: left
+}
+
+.right {
+  margin-left: 75%;
+}
+
+.separator {
+  float: left;
+  width: 10px;
+  height: 1px;
+}
+
+.space {
+  height: 15px;
+}
+
+.title {
+  font-size: 30px;
+  padding-bottom: 5px;
+}

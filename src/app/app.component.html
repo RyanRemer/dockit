@@ -1,5 +1,5 @@
 
-<div class="jumbotron">
+<div style="background: white !important" class="jumbotron">
   <h1>Dockit</h1>
 </div>
 
@@ -11,7 +11,8 @@
   <app-project-list (editEvent)="receiveProjToEdit($event)" (selectEvent)="receiveProjToSelect($event)"></app-project-list>
 </div>
 
-<div *ngIf="showTaskList()">
+<!-- Fix showTaskList() -->
+<div *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
   <app-task-list [tasks]="this.selectedProject.tasks"></app-task-list>
 </div>
 
