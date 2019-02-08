@@ -59,6 +59,7 @@ export class ProjectEditorComponent implements OnInit {
   }
 
   updateProject(){
+    
   }
 
 }
