@@ -3,7 +3,7 @@
 
 <div class="title"> {{project.title}}</div>
 <div class="small-space"></div>
-<div> This is a short project description. Just one or two sentences, to explain what's going on. </div>
+<div> {{project.description}}</div>
 
 <div class="space"></div>
 
@@ -19,7 +19,7 @@
   {{this.project.assignedTo[0]}}, {{this.project.assignedTo[1]}}, and {{this.project.assignedTo.length - 2}} more are collaborating on this project.</div>
 
 <div class="buttons">
-  <div class="button clickable" (click)="filterTasks('Overview')">Overview</div>
+  <div class="button clickable" (click)="filterTasks('Overview')" >Overview</div>
   <div class="small-space"></div>
   <div class="button clickable" (click)="filterTasks('My Tasks')">My Tasks</div>
   <div class="small-space"></div>
