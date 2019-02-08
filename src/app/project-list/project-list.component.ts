@@ -43,35 +43,21 @@ export class ProjectListComponent implements OnInit {
   }
 
   getProgress(project) {
-    console.log(project);
     var timeSpent = 0.0;
     var timeLeft = 0.0;
 
     project.tasks.forEach(element => {
       timeSpent += element.timeSpent;
       timeLeft += element.timeLeft;
-      console.log({
-        timeSpent: timeSpent,
-        timeLeft: timeLeft,
-        task: element
-      })
     });
 
     var totalTime = timeSpent + timeLeft;
-    console.log({
-      timeSpent: timeSpent,
-      timeLeft: timeLeft
-    })
 
     if (totalTime == 0){
       return 1;
     }
 
     return (timeSpent / totalTime) * 100;
-  }
-
-  getTimeLeftString(project){
-    
   }
 
 
