@@ -9,7 +9,9 @@
     </div>
     <div class="right">
       <div class="space"></div>
-      <div class="progress"></div>
+      <div class="progress">
+          <div class="progress-bar" [ngStyle]="{'width': getProgress(project) + '%'}"></div>
+        </div>
     </div>
     <div class="footer">
       <div class="button clickable" (click)="this.selectProject(project.title)">View Tasks</div>

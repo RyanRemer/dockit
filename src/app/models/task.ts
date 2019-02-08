@@ -6,4 +6,9 @@ export class Task{
     timeSpent:number;
     timeLeft:number;
 
+    constructor(){
+        this.timeSpent = 0.0;
+        this.timeLeft = 0.0
+    }
+
 }
