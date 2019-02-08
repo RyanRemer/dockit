@@ -18,12 +18,12 @@
 <div *ngIf="this.project.assignedTo.legnth > 3">
   {{this.project.assignedTo[0]}}, {{this.project.assignedTo[1]}}, and {{this.project.assignedTo.length - 2}} more are collaborating on this project.</div>
 
-<div class="space"></div>
-
-<div class="button clickable" (click)="filterTasks('Overview')">Overview</div>
-<div class="small-space"></div>
-<div class="button clickable" (click)="filterTasks('My Tasks')">My Tasks</div>
-<div class="small-space"></div>
-<div class="button clickable" (click)="filterTasks('Unassigned')">Unassigned</div>
+<div class="buttons">
+  <div class="button clickable" (click)="filterTasks('Overview')">Overview</div>
+  <div class="small-space"></div>
+  <div class="button clickable" (click)="filterTasks('My Tasks')">My Tasks</div>
+  <div class="small-space"></div>
+  <div class="button clickable" (click)="filterTasks('Unassigned')">Unassigned</div>
+</div>
 
 </div>

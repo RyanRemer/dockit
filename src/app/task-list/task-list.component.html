@@ -1,4 +1,5 @@
 
+<div style=" overflow: scroll" [style.height]="(150 * getTasks().length + 50).toString() + 'px'"> 
 <div style="display: inline-block; width: 100%;" *ngFor="let task of getTasks()">
 
   <div class="bar">
@@ -26,3 +27,5 @@
 </div>
 
 <div *ngIf="getTasks().length == 0">No tasks to display. (Note: filter application is under construction.)</div>
+
+</div>
