@@ -1,12 +1,12 @@
 
 <div>
 
-<div *ngFor="let project of tasks">
+<div style="display: inline-block; width:100%" *ngFor="let task of tasks">
 
   <div class="bar">
     <div class="float-wrapper">
       <div class="left">
-          <div class="title left clickable">{{project.title}}</div>
+          <div class="title left clickable">{{task.title}}</div>
       </div>
       <div class="right">
         <div class="space"></div>
@@ -20,8 +20,6 @@
     </div>
 
   </div>
-
-  <div class="space"></div>
 
 </div>
 
