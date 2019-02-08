@@ -14,15 +14,15 @@
 
 
 <div class="row" *ngIf="showProjectSideBar()">
-  <div class="col-md-4">
+  <div class="col-md-2">
       <app-project-side-bar [project]="this.selectedProject"></app-project-side-bar>
   </div>
 
-  <div class="col-md-8" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
+  <div class="col-md-10" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
     <app-task-list [tasks]="this.selectedProject.tasks"></app-task-list>
   </div>
 
-  <div class="col-md-8" *ngIf="showEditTask()" class="container">
+  <div class="col-md-10" *ngIf="showEditTask()" class="container">
       <app-task-editor></app-task-editor>
   </div>
 </div>
