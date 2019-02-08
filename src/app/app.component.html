@@ -11,20 +11,26 @@
   <app-project-list (editEvent)="receiveProjToEdit($event)" (selectEvent)="receiveProjToSelect($event)" (deleteEvent)="receiveProjToDelete($event)"></app-project-list>
 </div>
 
-<div *ngIf="showEditProject">
+<div *ngIf="showEditProject()">
+  <app-project-editor [project]="this.selectedProject"></app-project-editor>
 </div>
 
 
-<div class="left" *ngIf="showProjectSideBar()">
-  <app-project-side-bar [project]="this.selectedProject"></app-project-side-bar>
+<div class="row" *ngIf="showProjectSideBar()">
+  <div class="col-md-2">
+      <app-project-side-bar [project]="this.selectedProject"></app-project-side-bar>
+  </div>
+
+  <div class="col-md-10" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
+    <app-task-list [tasks]="this.selectedProject.tasks"></app-task-list>
+  </div>
+
+  <div class="col-md-10" *ngIf="showEditTask()" class="container">
+      <app-task-editor></app-task-editor>
+  </div>
 </div>
 
-<!-- Fix showTaskList() -->
-<div class="right" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
-  <app-task-list [tasks]="this.selectedProject.tasks"></app-task-list>
-</div>
 
 
-<div class="right" *ngIf="showEditTask()" class="container">
-  <app-task-editor></app-task-editor>
-</div>
+
+

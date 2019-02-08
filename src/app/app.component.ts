@@ -28,6 +28,9 @@ export class AppComponent {
     if (this.selectedProject == null) {
       return false;
     }
+    if (this.showEditProject()){
+      return false;
+    }
     return true;
   }
 
@@ -48,6 +51,7 @@ export class AppComponent {
   showEditTask() {
     if (this.selectedTask == 'none') {
       return false;
+
     }
     return true;
   }
@@ -55,6 +59,8 @@ export class AppComponent {
   receiveProjToEdit($event) {
     this.editProject = true;
     this.selectedProject = ClientData.getInstance().getProject($event);
+    console.log(this.selectedProject);
+    console.log(this.editProject);
   }
 
   receiveProjToSelect($event) {

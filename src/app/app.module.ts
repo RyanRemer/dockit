@@ -6,6 +6,7 @@ import { TaskEditorComponent } from './task-editor/task-editor.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectSideBarComponent } from './project-side-bar/project-side-bar.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { ProjectEditorComponent } from './project-editor/project-editor.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TaskListComponent } from './task-list/task-list.component';
     TaskEditorComponent,
     ProjectListComponent,
     ProjectSideBarComponent,
-    TaskListComponent
+    TaskListComponent,
+    ProjectEditorComponent
   ],
   imports: [
     BrowserModule
