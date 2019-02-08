@@ -1,8 +1,11 @@
 
-<div style="background: white !important" class="jumbotron">
-  <h1>Dockit</h1>
+<div class="bar">
+  <div class="dockit">Dockit</div>
+  <div class="button clickable">Logout</div>
+  <div class="button clickable">View Projects</div>
 </div>
 
+<div class="space"></div>
 
 <div *ngIf="showProjectList()">
   <app-project-list (editEvent)="receiveProjToEdit($event)" (selectEvent)="receiveProjToSelect($event)" (deleteEvent)="receiveProjToDelete($event)"></app-project-list>
@@ -26,8 +29,3 @@
       <app-task-editor></app-task-editor>
   </div>
 </div>
-
-
-
-
-

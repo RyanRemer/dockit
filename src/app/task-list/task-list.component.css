@@ -2,6 +2,7 @@
 .bar {
   width: calc(100% - 25px);
   float: left;
+  clear: right;
   background-color: white;
   padding-left: 25px;
   padding-right: 25px;
@@ -53,10 +54,12 @@
 }
 
 .space {
+  clear: right;
   height: 25px;
 }
 
 .title {
   font-size: 30px;
   padding-bottom: 5px;
+  height: 35px;
 }
