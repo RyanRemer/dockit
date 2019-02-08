@@ -13,7 +13,7 @@ export class AppComponent {
   selectedProject: Project = null;
   selectedTask = 'none';
   editProject = false;
-
+  taskFilter = 'Overview';
   constructor() {
   }
 
@@ -70,5 +70,16 @@ export class AppComponent {
 
   receiveProjToDelete($event) {
     ClientData.getInstance().deleteProject($event);
+  }
+
+  receiveFilterEvent($event) {
+    this.taskFilter = $event;
+  }
+
+  viewProjectList() {
+    this.selectedProject = null;
+    this.selectedTask = 'none';
+    this.editProject = false;
+    this.taskFilter = 'Overview';
   }
 }

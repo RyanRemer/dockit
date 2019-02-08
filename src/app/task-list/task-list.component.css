@@ -1,6 +1,6 @@
 
 .bar {
-  width: calc(100% - 25px);
+  width: 100%;
   float: left;
   clear: right;
   background-color: white;
@@ -8,7 +8,8 @@
   padding-right: 25px;
   padding-top: 15px;
   padding-bottom: 25px;
-  margin: auto;
+  margin-left: 0;
+  margin-bottom: 15px;
   height: 125px;
 }
 
@@ -54,12 +55,17 @@
 }
 
 .space {
-  clear: right;
-  height: 25px;
+  height: 15px;
+}
+
+.time {
+  text-align: right;
+  font-style: italic;
 }
 
 .title {
   font-size: 30px;
   padding-bottom: 5px;
+  margin-bottom: 5px;
   height: 35px;
 }

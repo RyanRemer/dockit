@@ -36,7 +36,7 @@
 
 .wrapper {
   background: white;
-  min-height: calc(100vh - 217px);
+  min-height: calc(100vh - 100px);
   overflow: hidden;
   padding-left: 25px;
   padding-right: 25px;

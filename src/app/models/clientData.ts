@@ -54,7 +54,14 @@ function getProjectData(){
     var redstone = new Project("Redstone Park Management", "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.");
     var task = new Task();
     task.title = "Update legalese";
+    task.timeSpent = 3;
+    task.timeLeft = 5;
     redstone.addTask(task);
+    var task2 = new Task();
+    task2.title = "Contact city hall";
+    task2.timeSpent = 0.25;
+    task2.timeLeft = 1;
+    redstone.addTask(task2);
 
     projects.push(redstone);
     projects.push(new Project("Night Wolf Integration", "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring."));

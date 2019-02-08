@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Project} from '../models/project';
 
 @Component({
@@ -13,6 +13,12 @@ export class ProjectSideBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  @Output() filterEvent = new EventEmitter<string>();
+
+  filterTasks(filter) {
+    this.filterEvent.emit(filter);
   }
 
 

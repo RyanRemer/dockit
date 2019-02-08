@@ -1,7 +1,7 @@
 
-<div>
 
-<div style="display: inline-block; width:100%" *ngFor="let task of tasks">
+
+<div style="display: inline-block; width: 100%;" *ngFor="let task of getTasks()">
 
   <div class="bar">
     <div class="float-wrapper">
@@ -10,7 +10,11 @@
       </div>
       <div class="right">
         <div class="space"></div>
-        <div class="progress"></div>
+        <div class="progress">
+            <div class="progress-bar" [ngStyle]="{'width': getProgress(task.title) + '%'}"></div>
+        </div>
+        <div class="time" *ngIf="(task.timeLeft > 0) && (task.timeLeft <= 1)">1 hour left</div>
+        <div class="time" *ngIf="task.timeLeft != 1">{{task.timeLeft}} hours left</div>
       </div>
     </div>
     <div class="footer">
@@ -23,4 +27,4 @@
 
 </div>
 
-</div>
+<div *ngIf="getTasks().length == 0">No tasks to display. (Note: filter application is under construction.)</div>
