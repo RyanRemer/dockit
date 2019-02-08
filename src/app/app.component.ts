@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ClientData} from './models/clientData';
 import { Project } from './models/project';
+import { Task } from './models/task';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +11,22 @@ import { Project } from './models/project';
 export class AppComponent {
   title = 'dockit';
 
-  selectedProject: Project = null;
-  selectedTask = 'none';
-  editProject = false;
-  taskFilter = 'Overview';
+  selectedProject: Project;
+  selectedTask: Task;
+  editProject: boolean;
+  editTask: boolean;
+  taskFilter: string;
+
   constructor() {
+    this.selectedProject = null;
+    this.selectedTask = null;
+    this.editProject = false;
+    this.editTask = false;
+    this.taskFilter = 'Overview';
   }
 
   showProjectList() {
-    if (this.selectedProject == null) {
+    if ((this.selectedProject == null) && (this.editProject == false)) {
       return true;
     }
     return false;
@@ -45,15 +53,14 @@ export class AppComponent {
     if (this.editProject == true) {
       return false;
     }
+    if (this.editTask == true) {
+      return false;
+    }
     return true;
   }
 
   showEditTask() {
-    if (this.selectedTask == 'none') {
-      return false;
-
-    }
-    return true;
+    return this.editTask;
   }
 
   receiveProjToEdit($event) {
@@ -65,11 +72,31 @@ export class AppComponent {
 
   receiveProjToSelect($event) {
     this.selectedProject = ClientData.getInstance().getProject($event);
-    //this.selectedProject = $event;
   }
 
   receiveProjToDelete($event) {
     ClientData.getInstance().deleteProject($event);
+  }
+
+  receiveTaskToEdit($event) {
+    this.selectedTask = $event;
+    this.editTask = true;
+  }
+
+  receiveTaskToDelete($event) {
+    ClientData.getInstance().deleteTask(this.selectedProject, $event.title);
+    this.editTask = false;
+  }
+
+  receiveTaskToUpdate($event) {
+    ClientData.getInstance().updateTask(this.selectedProject, $event);
+    for (let j = 0; j < this.selectedProject.tasks.length; j++) {
+      if (this.selectedProject.tasks[j].title == $event.title) {
+        this.selectedProject.tasks[j] = $event;
+      }
+    }
+
+    this.editTask = false;
   }
 
   receiveFilterEvent($event) {
@@ -78,8 +105,23 @@ export class AppComponent {
 
   viewProjectList() {
     this.selectedProject = null;
-    this.selectedTask = 'none';
+    this.selectedTask = null;
     this.editProject = false;
+    this.editTask = false;
     this.taskFilter = 'Overview';
+  }
+
+  add() {
+    if (this.selectedTask == null) {
+      this.selectedTask = null;
+      this.editProject = true;
+      this.editTask = false;
+      this.taskFilter = 'Overview';
+    }
+    else {
+      this.selectedProject = null;
+      this.selectedTask = null;
+      this.editTask = true;
+    }
   }
 }

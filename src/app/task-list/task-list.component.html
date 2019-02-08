@@ -1,6 +1,4 @@
 
-
-
 <div style="display: inline-block; width: 100%;" *ngFor="let task of getTasks()">
 
   <div class="bar">
@@ -18,9 +16,9 @@
       </div>
     </div>
     <div class="footer">
-      <div class="button clickable">Edit Task</div>
+      <div class="button clickable" (click)="this.editTask(task)">Edit Task</div>
       <div class="separator"></div>
-      <div class="button clickable">Delete Task</div>
+      <div class="button clickable" (click)="this.deleteTask(task)">Delete Task</div>
     </div>
 
   </div>

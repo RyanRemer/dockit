@@ -11,6 +11,7 @@ import { ClientData } from '../models/clientData';
 export class ProjectEditorComponent implements OnInit {
 
   @Input() project: Project;
+  @Input() new: boolean;
   users: User[];
 
   constructor() {

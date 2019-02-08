@@ -12,7 +12,7 @@
 </div>
 
 <div *ngIf="showEditProject()">
-  <app-project-editor [project]="this.selectedProject"></app-project-editor>
+  <app-project-editor [project]="this.selectedProject" [new]="this.selectedProject==null"></app-project-editor>
 </div>
 
 
@@ -21,11 +21,16 @@
       <app-project-side-bar [project]="this.selectedProject" (filterEvent)="receiveFilterEvent($event)"></app-project-side-bar>
   </div>
 
+  <!--TODO: fix showTaskList()-->
   <div class="col-md-10" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
-    <app-task-list [tasks]="this.selectedProject.tasks" [filter]="this.taskFilter"></app-task-list>
+    <app-task-list [tasks]="this.selectedProject.tasks" [filter]="this.taskFilter" (editEvent)="receiveTaskToEdit($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-list>
   </div>
 
   <div class="col-md-10" *ngIf="showEditTask()" class="container">
-      <app-task-editor></app-task-editor>
+      <app-task-editor [new]="this.selectedTask==null" [task]="this.selectedTask" (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-editor>
   </div>
+</div>
+
+<div *ngIf="showProjectList() || showTaskList()">
+    <div class="add-button clickable" (click)="add()">+</div>
 </div>

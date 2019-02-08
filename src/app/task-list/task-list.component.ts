@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../models/task';
 
 @Component({
@@ -11,9 +11,28 @@ export class TaskListComponent implements OnInit {
   @Input() tasks: Task[];
   @Input() filter: string;
 
-  constructor() { }
+  constructor() {
+ }
 
   ngOnInit() {
+  }
+
+  @Output() editEvent = new EventEmitter<Task>();
+  @Output() deleteEvent = new EventEmitter<Task>();
+
+  editTask(task) {
+    this.editEvent.emit(task);
+  }
+
+  deleteTask(task) {
+    var keepTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (this.tasks[i].title != task.title) {
+        keepTasks.push(this.tasks[i]);
+      }
+    }
+    this.tasks = keepTasks;
+    this.deleteEvent.emit(task);
   }
 
   getProgress(task) {

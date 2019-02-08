@@ -34,6 +34,45 @@ export class ClientData {
       }
       this.projects = keepProjects;
     }
+
+    findTask(projectName, taskName) {
+      for (let i = 0; i < this.projects.length; i++) {
+        if (this.projects[i].title == projectName) {
+          for (let j = 0; j < this.projects[i].tasks.length; j++) {
+            if (this.projects[i].tasks[j].title == taskName) {
+              return(this.projects[i].tasks[j]);
+            }
+          }
+        }
+      }
+      return null;
+    }
+
+    updateTask(projectName, task) {
+      for (let i = 0; i < this.projects.length; i++) {
+        if (this.projects[i].title == projectName) {
+          for (let j = 0; j < this.projects[i].tasks.length; j++) {
+            if (this.projects[i].tasks[j].title == task.title) {
+              this.projects[i].tasks[j] = task;
+            }
+          }
+        }
+      }
+    }
+
+    deleteTask(projectName, taskName) {
+      for (let i = 0; i < this.projects.length; i++) {
+        if (this.projects[i].title == projectName) {
+          var keepTasks = [];
+          for (let j = 0; j < this.projects[i].tasks.length; j++) {
+            if (this.projects[i].tasks[j].title != taskName) {
+              keepTasks.push(this.projects[i].tasks[j])
+            }
+          }
+          this.projects[i].tasks = keepTasks
+        }
+      }
+    }
 }
 
 function getUserData(){

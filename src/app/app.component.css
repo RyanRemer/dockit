@@ -6,6 +6,20 @@
   padding-right: 50px;
 }
 
+.add-button {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 100px;
+  border-radius: 20px;
+  color: #F6890A;
+  background-color: white;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .button {
   float: right;
   display: inline-block;
