@@ -12,7 +12,7 @@ export class TaskEditorComponent implements OnInit {
   task: Task;
   users: User[];
 
-  constructor() {
+  constructor(taskToEdit:Task) {
     this.task = {
       title: "Test Task",
       assignedTo: [],
@@ -23,7 +23,6 @@ export class TaskEditorComponent implements OnInit {
   }
 
   ngOnInit() {
-
 
   }
 
