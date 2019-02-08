@@ -1,0 +1,40 @@
+.button {
+  float: left;
+  background-color: #6CD0FF;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  clear:left;
+  width: 150px;
+  text-align: center;
+}
+
+.description {
+  clear: left;
+}
+
+.small-space {
+  height: 10px;
+  width: 2px;
+  clear: left;
+}
+
+.space {
+  height: 25px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.wrapper {
+  background: white;
+  min-height: calc(100vh - 217px);
+  overflow: hidden;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}

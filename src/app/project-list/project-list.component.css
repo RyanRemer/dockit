@@ -1,8 +1,11 @@
 
 .bar {
-  width: 100%;
+  width: 90%;
   background-color: white;
-  padding: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 25px;
   margin: auto;
   height: 125px;
 }
@@ -21,7 +24,10 @@
   float: left;
   background-color: #6CD0FF;
   padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .left {
@@ -35,15 +41,15 @@
 
 .separator {
   float: left;
-  width: 10px;
+  width: 15px;
   height: 1px;
 }
 
 .space {
-  height: 15px;
+  height: 25px;
 }
 
 .title {
-  font-size: 30px;
+  font-size: 36px;
   padding-bottom: 5px;
 }

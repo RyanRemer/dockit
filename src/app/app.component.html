@@ -3,22 +3,25 @@
   <h1>Dockit</h1>
 </div>
 
-<p> editProject : {{editProject}} </p>
-
-<div *ngIf="showProjectSideBar()">
-  <app-project-side-bar [project]="this.selectedProject"></app-project-side-bar>
-</div>
 
 <div *ngIf="showProjectList()">
   <app-project-list (editEvent)="receiveProjToEdit($event)" (selectEvent)="receiveProjToSelect($event)" (deleteEvent)="receiveProjToDelete($event)"></app-project-list>
 </div>
 
+<div *ngIf="showEditProject">
+</div>
+
+
+<div class="left" *ngIf="showProjectSideBar()">
+  <app-project-side-bar [project]="this.selectedProject"></app-project-side-bar>
+</div>
+
 <!-- Fix showTaskList() -->
-<div *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
+<div class="right" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
   <app-task-list [tasks]="this.selectedProject.tasks"></app-task-list>
 </div>
 
 
-<div *ngIf="showEditTask()" class="container">
+<div class="right" *ngIf="showEditTask()" class="container">
   <app-task-editor></app-task-editor>
 </div>
