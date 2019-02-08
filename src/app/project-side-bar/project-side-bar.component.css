@@ -1,3 +1,4 @@
+
 .button {
   float: left;
   background-color: #6CD0FF;
@@ -9,6 +10,12 @@
   clear:left;
   width: 150px;
   text-align: center;
+}
+
+.buttons {
+  clear: both;
+  position: absolute;
+  bottom: 25px;
 }
 
 .clickable:hover {
@@ -36,10 +43,10 @@
 
 .wrapper {
   background: white;
-  min-height: calc(100vh - 100px);
-  overflow: hidden;
+  height: 600px;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 15px;
   padding-bottom: 25px;
+  position: relative;
 }

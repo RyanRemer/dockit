@@ -17,16 +17,16 @@
 
 
 <div class="row" *ngIf="showProjectSideBar()" style="width:100%">
-  <div class="col-md-2">
+  <div class="col-md-3">
       <app-project-side-bar [project]="this.selectedProject" (filterEvent)="receiveFilterEvent($event)"></app-project-side-bar>
   </div>
 
   <!--TODO: fix showTaskList()-->
-  <div class="col-md-10" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
+  <div class="col-md-9" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
     <app-task-list [tasks]="this.selectedProject.tasks" [filter]="this.taskFilter" (editEvent)="receiveTaskToEdit($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-list>
   </div>
 
-  <div class="col-md-10" *ngIf="showEditTask()" class="container">
+  <div class="col-md-9" *ngIf="showEditTask()" class="container">
       <app-task-editor [new]="this.selectedTask==null" [task]="this.selectedTask" (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-editor>
   </div>
 </div>
