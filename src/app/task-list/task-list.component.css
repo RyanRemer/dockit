@@ -1,0 +1,62 @@
+
+.bar {
+  width: calc(100% - 25px);
+  float: left;
+  background-color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin: auto;
+  height: 125px;
+}
+
+.button {
+  float: left;
+  display: inline-block;
+  background-color: #6CD0FF;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  color: #50656D;
+}
+
+.float-wrapper {
+  display: inline-block;
+  width: 100%;
+}
+
+.footer {
+  clear: right;
+  padding: 0;
+}
+
+.left {
+  width: 75%;
+  float: left
+}
+
+.right {
+  margin-left: 75%;
+}
+
+.separator {
+  float: left;
+  width: 10px;
+  height: 10px;
+}
+
+.space {
+  height: 25px;
+}
+
+.title {
+  font-size: 30px;
+  padding-bottom: 5px;
+}

@@ -24,6 +24,16 @@ export class ClientData {
       }
       return null;
     }
+
+    deleteProject(projectName) {
+      var keepProjects = [];
+      for (let i = 0; i < this.projects.length; i++) {
+        if (this.projects[i].title != projectName) {
+          keepProjects.push(this.projects[i]);
+        }
+      }
+      this.projects = keepProjects;
+    }
 }
 
 function getUserData(){
@@ -43,7 +53,7 @@ function getProjectData(){
 
     var redstone = new Project("Redstone Park Management", "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.");
     var task = new Task();
-    task.title = "Update legalize";
+    task.title = "Update legalese";
     redstone.addTask(task);
 
     projects.push(redstone);

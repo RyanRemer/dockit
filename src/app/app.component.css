@@ -1,0 +1,8 @@
+.left {
+  width: 450px;
+  float: left
+}
+
+.right {
+  margin-left: 500px;
+}
