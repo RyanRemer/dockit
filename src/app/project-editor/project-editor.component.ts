@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Project } from '../models/project';
+import { User } from '../models/user';
+import { ClientData } from '../models/clientData';
 
 @Component({
   selector: 'app-project-editor',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectEditorComponent implements OnInit {
 
-  constructor() { }
+  @Input() project: Project;
+  users: User[];
+
+  constructor() {
+    this.users = ClientData.getInstance().users;
+   }
 
   ngOnInit() {
   }
