@@ -11,6 +11,11 @@
   text-align: center;
 }
 
+.clickable:hover {
+  cursor: pointer;
+  color: #50656D;
+}
+
 .description {
   clear: left;
 }

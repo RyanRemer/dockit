@@ -1,3 +1,40 @@
+.bar {
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.button {
+  float: right;
+  display: inline-block;
+  background-color: #6CD0FF;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.clickable:hover {
+  cursor: pointer;
+  color: #50656D;
+}
+
+.dockit {
+  float: left;
+  color: #009DE7;
+  font-size: 36px;
+  font-style: sans-serif;
+  font-weight: bold;
+  margin-left: 50px;
+  padding-top: 10px;
+}
+
 .left {
   width: 450px;
   float: left
@@ -5,4 +42,9 @@
 
 .right {
   margin-left: 500px;
+}
+
+.space {
+  height: 25px;
+
 }
