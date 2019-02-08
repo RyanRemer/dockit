@@ -26,8 +26,8 @@
     <app-task-list [tasks]="this.selectedProject.tasks" [filter]="this.taskFilter" (editEvent)="receiveTaskToEdit($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-list>
   </div>
 
-  <div class="col-md-9" *ngIf="showEditTask()" class="container">
-      <app-task-editor [new]="this.selectedTask==null" [task]="this.selectedTask" (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-editor>
+  <div class="col-md-9" *ngIf="showEditTask()">
+    <app-task-editor [new]="this.selectedTask==null" [task]="this.selectedTask" (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-editor>
   </div>
 </div>
 
