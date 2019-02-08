@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../models/task';
 import {User} from '../models/user';
 import {ClientData} from '../models/clientData';
@@ -9,16 +9,11 @@ import {ClientData} from '../models/clientData';
   styleUrls: ['./task-editor.component.css']
 })
 export class TaskEditorComponent implements OnInit {
-  task: Task;
+
+  @Input() task: Task;
   users: User[];
 
   constructor(taskToEdit:Task) {
-    this.task = {
-      title: "Test Task",
-      assignedTo: [],
-      timeSpent: 1.0,
-      timeLeft: 4.0
-    }
     this.users = ClientData.getInstance().users;
   }
 

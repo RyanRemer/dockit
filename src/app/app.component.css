@@ -35,6 +35,10 @@
   padding-top: 10px;
 }
 
+.dockit sub {
+  font-size: 12px;
+}
+
 .left {
   width: 450px;
   float: left
