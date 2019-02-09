@@ -1,61 +1,27 @@
 
 .bar {
   width: 100%;
-  float: left;
-  clear: right;
   background-color: white;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 15px;
-  padding-bottom: 25px;
-  margin-left: 0;
-  margin-bottom: 15px;
-  height: 125px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.button {
-  float: left;
-  display: inline-block;
-  background-color: #6CD0FF;
-  padding: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 4px;
-  font-weight: bold;
+.float-right{
+  width:50%;
+  margin-top: 20px;
+}
+
+.progress {
+  width: 100%;
+}
+
+.progress-bar {
+  background-color: var(--secondaryColor0);
 }
 
 .clickable:hover {
   cursor: pointer;
   color: #50656D;
-}
-
-.float-wrapper {
-  display: inline-block;
-  width: 100%;
-}
-
-.footer {
-  clear: right;
-  padding: 0;
-}
-
-.left {
-  width: 75%;
-  float: left
-}
-
-.right {
-  margin-left: 75%;
-}
-
-.separator {
-  float: left;
-  width: 10px;
-  height: 10px;
-}
-
-.space {
-  height: 15px;
 }
 
 .time {
@@ -64,8 +30,7 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 24px;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  height: 35px;
 }

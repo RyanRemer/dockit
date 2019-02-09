@@ -1,0 +1,9 @@
+form {
+    background-color: white;
+    padding: 20px;
+}
+
+form label {
+    font-size: 24px;
+    font-family: sans-serif;
+}

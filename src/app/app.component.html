@@ -1,8 +1,10 @@
 
 <div class="bar">
-  <div class="dockit">Dockit</div>
-  <div class="btn btn-primary float-right">Logout</div>
-  <div *ngIf="!showProjectList()" class="btn btn-primary float-right" (click)="viewProjectList()">Projects</div>
+  <div class="dockit">
+    <img src="../assets/DockitLogo.png" width="50" height="50" alt="Logo">
+    Dockit  <sub>A Flexible Collaborative To-Do List</sub></div>
+  <div class="btn float-right" style="margin-left: 10px;">Logout</div>
+  <div *ngIf="!showProjectList()" class="btn float-right" (click)="viewProjectList()">Projects</div>
 </div>
 
 <div class="space"></div>
