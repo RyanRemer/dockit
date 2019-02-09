@@ -14,6 +14,16 @@
   --secondaryColor0: #f88250;
 }
 
+.btn {
+  background-color: var(--primaryColor0);
+  border-color: var(--primaryColor0);
+}
+
+.btn:hover {
+  background-color: var(--primaryColor-2);
+  border-color: var(--primaryColor-2);
+}
+
 html, body{
   height:100%;
 }
