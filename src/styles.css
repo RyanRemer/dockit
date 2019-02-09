@@ -17,11 +17,13 @@
 .btn {
   background-color: var(--primaryColor0);
   border-color: var(--primaryColor0);
+  color: white;
 }
 
 .btn:hover {
   background-color: var(--primaryColor-2);
   border-color: var(--primaryColor-2);
+  color: white;
 }
 
 html, body{
