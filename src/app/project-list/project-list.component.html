@@ -1,29 +1,15 @@
-
-<div>
-
 <div *ngFor="let project of projects">
 
   <div class="bar">
-    <div class="left">
-        <div class="title left clickable" (click)="this.selectProject(project.title)">{{project.title}}</div>
-    </div>
-    <div class="right">
-      <div class="space"></div>
-      <div class="progress">
-          <div class="progress-bar" [ngStyle]="{'width': getProgress(project) + '%'}"></div>
-        </div>
-    </div>
-    <div class="footer">
-      <div class="button clickable" (click)="this.selectProject(project.title)">View Tasks</div>
-      <div class="separator"></div>
-      <div class="button clickable" (click)="this.editProject(project.title)">Edit Project</div>
-      <div class="separator"></div>
-      <div class="button clickable" (click)="this.deleteProject(project.title)">Delete Project</div>
-    </div>
+      <div class="progress float-right">
+        <div class="progress-bar" [ngStyle]="{'width': getProgress(project) + '%'}"></div>
+      </div>
+      <div class="title left clickable" (click)="this.selectProject(project.title)">{{project.title}}</div>
+      <div class="footer btn-group">
+        <div class="btn btn-primary" (click)="this.selectProject(project.title)">View Tasks</div>
+        <div class="btn btn-primary" (click)="this.editProject(project.title)">Edit Project</div>
+        <div class="btn btn-primary" (click)="this.deleteProject(project.title)">Delete Project</div>
+      </div>
   </div>
-
-  <div class="space"></div>
-
-</div>
 
 </div>

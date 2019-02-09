@@ -1,11 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --backgroundColor: white;
+  --lightContrastColor: #b3e6fc;
+  --darkContrastColor: rgb(77, 77, 77);
+  --foregroundColor: black;
+
+  --primaryColor-2:#00acf6;
+  --primaryColor-1:#2ab9f7;
+  --primaryColor0:#50c6f8;
+  --primaryColor1:#82d6fb;
+  --primaryColor2:#b3e6fc;
+
+  --secondaryColor0: #f88250;
+}
+
+html, body{
+  height:100%;
+}
 
 form label{
   font-size: 20px;
   font-family: sans-serif;
 }
 
-.container{
+form{
   background-color:white;
   padding: 20px;
 }

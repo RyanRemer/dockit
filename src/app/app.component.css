@@ -6,6 +6,12 @@
   padding-right: 50px;
 }
 
+#content {
+  padding: 20px;
+  height:100%;
+  background-color: var(--lightContrastColor);
+}
+
 .add-button {
   position: fixed;
   bottom: 25px;
@@ -24,23 +30,8 @@
   box-shadow: 3px 3px 10px 0px rgba(80,101,109,0.8);
 }
 
-.button {
-  float: right;
-  display: inline-block;
-  background-color: #6CD0FF;
-  padding: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 4px;
-  font-weight: bold;
-
-  margin-top: 20px;
-  margin-left: 15px;
-}
-
-.clickable:hover {
-  cursor: pointer;
-  color: #50656D;
+.primary {
+  background-color: var(--primaryColor0);
 }
 
 .dockit {
@@ -57,16 +48,6 @@
   font-size: 12px;
 }
 
-.left {
-  width: 450px;
-  float: left
-}
-
-.right {
-  margin-left: 500px;
-}
-
 .space {
   height: 25px;
-
 }

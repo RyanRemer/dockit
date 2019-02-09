@@ -89,6 +89,7 @@ export class AppComponent {
   }
 
   receiveTaskToUpdate($event) {
+    
     ClientData.getInstance().updateTask(this.selectedProject, $event);
     for (let j = 0; j < this.selectedProject.tasks.length; j++) {
       if (this.selectedProject.tasks[j].title == $event.title) {

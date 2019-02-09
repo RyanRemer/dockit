@@ -2,12 +2,19 @@
 .bar {
   width: 90%;
   background-color: white;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 15px;
-  padding-bottom: 25px;
+  padding: 20px;
   margin: auto;
-  height: 125px;
+  margin-bottom: 20px;
+}
+
+.progress{
+  width: 50%;
+  float: right;
+  margin-top: 20px;
+}
+
+.progress-bar{
+  background-color: var(--secondaryColor0);
 }
 
 .clickable:hover {
@@ -15,41 +22,9 @@
   color: #50656D;
 }
 
-.footer {
-  clear: both;
-  margin: auto;
-}
-
-.button {
-  float: left;
-  background-color: #6CD0FF;
-  padding: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-.left {
-  width: 75%;
-  float: left
-}
-
-.right {
-  margin-left: 75%;
-}
-
-.separator {
-  float: left;
-  width: 15px;
-  height: 1px;
-}
-
-.space {
-  height: 25px;
-}
 
 .title {
   font-size: 36px;
   padding-bottom: 5px;
+  margin-bottom: 10px;
 }

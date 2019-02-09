@@ -1,5 +1,5 @@
 
-<div style=" overflow: scroll" [style.height]="(150 * getTasks().length + 50).toString() + 'px'"> 
+<div style=" overflow-y: auto; height:100%"> 
 <div style="display: inline-block; width: 100%;" *ngFor="let task of getTasks()">
 
   <div class="bar">
