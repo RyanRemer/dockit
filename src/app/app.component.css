@@ -1,11 +1,3 @@
-.bar {
-  width: 100%;
-  height: 75px;
-  background-color: white;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
 #content {
   padding: 20px;
   height:100%;
@@ -34,20 +26,14 @@
   background-color: var(--primaryColor0);
 }
 
-.dockit {
-  float: left;
-  color: #009DE7;
+#title {
+  color: var(--primaryColor0);
   font-size: 36px;
   font-style: sans-serif;
   font-weight: bold;
-  margin-left: 50px;
-  padding-top: 10px;
 }
 
-.dockit sub {
-  font-size: 12px;
-}
-
-.space {
-  height: 25px;
+#subTitle {
+  font-size: 18px;
+  font-weight: normal;
 }

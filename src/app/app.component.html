@@ -1,42 +1,49 @@
+<nav class="navbar navbar-light bg-white">
+  <a class="navbar-brand">
+    <img src="../assets/DockitLogo.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+    <span id="title">
+      Dockit
+      <sub id="subTitle">A Flexible Collaborative To-Do List</sub>
+    </span>
+  </a>
 
-<div class="bar">
-  <div class="dockit">
-    <img src="../assets/DockitLogo.png" width="50" height="50" alt="Logo">
-    Dockit  <sub>A Flexible Collaborative To-Do List</sub></div>
-  <div class="btn float-right" style="margin-left: 10px;">Logout</div>
-  <div *ngIf="!showProjectList()" class="btn float-right" (click)="viewProjectList()">Projects</div>
-</div>
-
-<div class="space"></div>
+  <form class="form-inline">
+      <button class="btn mr-2" *ngIf="!showProjectList()" (click)="viewProjectList()">Projects</button>
+      <button class="btn" style="text-decoration: none">Logout</button>    
+  </form>
+  
+</nav>
 
 <div id="content">
-    <div *ngIf="showProjectList()">
-        <app-project-list (editEvent)="receiveProjToEdit($event)" (selectEvent)="receiveProjToSelect($event)" (deleteEvent)="receiveProjToDelete($event)"></app-project-list>
-      </div>
-      
-      <div *ngIf="showEditProject()">
-        <app-project-editor [project]="this.selectedProject" [new]="this.selectedProject==null"></app-project-editor>
-      </div>
-      
-      
-      <div class="row" *ngIf="showProjectSideBar()" style="width:100%">
-        <div class="col-md-3">
-            <app-project-side-bar [project]="this.selectedProject" (filterEvent)="receiveFilterEvent($event)"></app-project-side-bar>
-        </div>
-      
-        <!--TODO: fix showTaskList()-->
-        <div class="col-md-9" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
-          <app-task-list [tasks]="this.selectedProject.tasks" [filter]="this.taskFilter" (editEvent)="receiveTaskToEdit($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-list>
-        </div>
-      
-        <div class="col-md-9" *ngIf="showEditTask()">
-          <app-task-editor [new]="this.selectedTask==null" [task]="this.selectedTask" (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-editor>
-        </div>
-      </div>
-      
-      <div *ngIf="showProjectList() || showTaskList()">
-          <div class="add-button clickable" (click)="add()">+</div>
-      </div>
+  <div *ngIf="showProjectList()">
+    <app-project-list (editEvent)="receiveProjToEdit($event)" (selectEvent)="receiveProjToSelect($event)"
+      (deleteEvent)="receiveProjToDelete($event)"></app-project-list>
+  </div>
+
+  <div *ngIf="showEditProject()">
+    <app-project-editor [project]="this.selectedProject" [new]="this.selectedProject==null"></app-project-editor>
+  </div>
+
+
+  <div class="row" *ngIf="showProjectSideBar()" style="width:100%">
+    <div class="col-md-3">
+      <app-project-side-bar [project]="this.selectedProject" (filterEvent)="receiveFilterEvent($event)">
+      </app-project-side-bar>
+    </div>
+
+    <!--TODO: fix showTaskList()-->
+    <div class="col-md-9" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
+      <app-task-list [tasks]="this.selectedProject.tasks" [filter]="this.taskFilter"
+        (editEvent)="receiveTaskToEdit($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-list>
+    </div>
+
+    <div class="col-md-9" *ngIf="showEditTask()">
+      <app-task-editor [new]="this.selectedTask==null" [task]="this.selectedTask"
+        (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-editor>
+    </div>
+  </div>
+
+  <div *ngIf="showProjectList() || showTaskList()">
+    <div class="add-button clickable" (click)="add()">+</div>
+  </div>
 </div>
-
-
