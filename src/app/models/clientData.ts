@@ -25,14 +25,19 @@ export class ClientData {
       return null;
     }
 
-    deleteProject(projectName) {
-      var keepProjects = [];
-      for (let i = 0; i < this.projects.length; i++) {
-        if (this.projects[i].title != projectName) {
-          keepProjects.push(this.projects[i]);
+    updateProject(oldProject, newProject){
+      for (let i = 0; i < this.projects.length; i++){
+        if (oldProject == this.projects[i]){
+          this.projects[i] = newProject;
         }
       }
-      this.projects = keepProjects;
+    }
+
+    deleteProject(projectName) {
+      const index = this.projects.indexOf(projectName, 0);
+      if (index > -1){
+        this.projects.splice(index, 1);
+      }
     }
 
     findTask(projectName, taskName) {

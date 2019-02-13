@@ -12,6 +12,10 @@
   --primaryColor2:#b3e6fc;
 
   --secondaryColor0: #f88250;
+
+  --textDockitSize: 36px;
+  
+  --textInputSize: 18px;
 }
 
 .btn {

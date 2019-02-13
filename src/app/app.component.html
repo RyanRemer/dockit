@@ -21,7 +21,8 @@
   </div>
 
   <div *ngIf="showEditProject()">
-    <app-project-editor [project]="this.selectedProject" [new]="this.selectedProject==null"></app-project-editor>
+    <app-project-editor [project]="this.selectedProject" [new]="this.selectedProject==null"
+    (updateEvent)="recieveProjToUpdate($event)" (deleteEvent)="receiveProjToDelete($event)"></app-project-editor>
   </div>
 
 

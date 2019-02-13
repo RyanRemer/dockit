@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Project } from '../models/project';
 import { User } from '../models/user';
 import { ClientData } from '../models/clientData';
+import { projection } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-project-editor',
@@ -11,9 +12,12 @@ import { ClientData } from '../models/clientData';
 export class ProjectEditorComponent implements OnInit {
 
   @Input() project: Project;
+  updatedProject: Project;
+
   @Input() new: boolean;
   users: User[];
   searchName: string;
+  
 
   constructor() {
    }
@@ -21,45 +25,47 @@ export class ProjectEditorComponent implements OnInit {
   ngOnInit() {
     var clientData = ClientData.getInstance();
     this.users = clientData.users;
-  }
 
-  filterUsers(){
-    if (!this.searchName){
-      this.users = ClientData.getInstance().users;
-    } else {
-      this.users = this.getFilteredUsers();
-    }
-
+    this.updatedProject = Object.assign({}, this.project);
   }
 
   getFilteredUsers(){
-    var filteredUsers = [];
-    this.users.forEach(user => {
-      if (user.name.includes(this.searchName)){
-        filteredUsers.push(user);
-      }
-    })
-  
-    return filteredUsers;
+    if (!this.searchName){
+      return this.users;
+    } else {
+      var filteredUsers = [];
+      this.users.forEach(user => {
+        var name = user.name.toLowerCase();
+        if (name.includes(this.searchName.toLowerCase())){
+          filteredUsers.push(user);
+        }
+      })
+      return filteredUsers;
+    }
   }
 
   isAssignedToProject(user:User){
-    return this.project.assignedTo.includes(user);
+    return this.updatedProject.assignedTo.includes(user);
   }
 
   setAssignment(user:User, isAssigned:boolean){
-    if (isAssigned && !this.project.assignedTo.includes(user)){
-      this.project.assignedTo.push(user);
+    if (isAssigned && !this.updatedProject.assignedTo.includes(user)){
+      this.updatedProject.assignedTo.push(user);
     } else {
-      var index = this.project.assignedTo.indexOf(user);
-      this.project.assignedTo.splice(index, 1);
+      var index = this.updatedProject.assignedTo.indexOf(user);
+      this.updatedProject.assignedTo.splice(index, 1);
     }
-
-    console.log(this.project)
   }
 
+  @Output() updateEvent = new EventEmitter<Project[]>();
+  @Output() deleteEvent = new EventEmitter<Project>();
+
   updateProject(){
-    
+    this.updateEvent.emit([this.project, this.updatedProject]);
+  }
+
+  deleteProject(){
+    this.deleteEvent.emit(this.project)
   }
 
 }

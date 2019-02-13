@@ -2,17 +2,17 @@
   <form>
     <div class="form-group">
       <label for="title">Project Title:</label>
-      <input [(ngModel)]="project.title" class="form-control" name="title">
+      <input [(ngModel)]="updatedProject.title" class="form-control" name="title">
     </div>
     <div class="form-group">
       <label for="assignedTo">Assigned To:</label>
-      <input type="text" class="form-control" (input)="filterUsers()" [(ngModel)]='searchName' name="assignedTo"
+      <input type="text" class="form-control" [(ngModel)]='searchName' name="assignedTo"
         placeholder="Search for Company Employee">
       <hr>
       <div style="height: 200px; overflow-y:auto">
-        <div *ngFor="let user of users">
+        <div *ngFor="let user of getFilteredUsers()">
           <input type="checkbox" [checked]="isAssignedToProject(user)"
-          (click)="setAssignment(user, !isAssignedToProject(user))"> 
+          (click)="setAssignment(user, !isAssignedToProject(user))">
           {{user.name}}
           <hr>
         </div>
@@ -20,12 +20,12 @@
     </div>
     <div class="form-group">
       <label for="description">Project Description:</label>
-      <textarea class="form-control" rows="5" name="description" [(ngModel)]="project.description"></textarea>
+      <textarea class="form-control" rows="5" name="description" [(ngModel)]="updatedProject.description"></textarea>
     </div>
 
     <button type="button" class="btn btn-block" (click)="this.updateProject()">Update
       Project</button>
-    <button type="button" class="btn btn-block">Delete Project </button>
+    <button type="button" class="btn btn-block" (click)="this.deleteProject()">Delete Project </button>
 
   </form>
 </div>

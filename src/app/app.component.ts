@@ -74,8 +74,17 @@ export class AppComponent {
     this.selectedProject = ClientData.getInstance().getProject($event);
   }
 
+  recieveProjToUpdate($event){
+    var oldProject = $event[0];
+    var newProject = $event[1];
+    ClientData.getInstance().updateProject(oldProject, newProject);
+    this.viewProjectList();
+  }
+
   receiveProjToDelete($event) {
-    ClientData.getInstance().deleteProject($event);
+    var badProject = $event;
+    ClientData.getInstance().deleteProject(badProject);
+    this.viewProjectList();
   }
 
   receiveTaskToEdit($event) {
