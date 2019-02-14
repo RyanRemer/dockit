@@ -61,7 +61,7 @@ export class AppComponent {
 
   receiveProjToEdit($event) {
     this.editProject = true;
-    this.selectedProject = ClientData.getInstance().getProject($event);
+    this.selectedProject = $event;
     console.log(this.selectedProject);
     console.log(this.editProject);
   }
