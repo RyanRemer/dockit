@@ -67,10 +67,15 @@ export class AppComponent {
   }
 
   receiveProjToSelect($event) {
-    this.selectedProject = ClientData.getInstance().getProject($event);
+    this.selectedProject = $event;
   }
 
-  recieveProjToUpdate($event){
+  receiveProjToAdd($event){
+    ClientData.getInstance().addProject($event);
+    this.viewProjectList();
+  }
+
+  receiveProjToUpdate($event){
     var oldProject = $event[0];
     var newProject = $event[1];
     ClientData.getInstance().updateProject(oldProject, newProject);
@@ -115,6 +120,7 @@ export class AppComponent {
   add() {
     if (this.selectedTask == null) {
       this.selectedTask = null;
+      this.selectedProject = null;
       this.editProject = true;
       this.editTask = false;
       this.taskFilter = 'All Tasks';

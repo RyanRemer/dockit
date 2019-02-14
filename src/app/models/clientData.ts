@@ -25,6 +25,12 @@ export class ClientData {
       return null;
     }
 
+    addProject(project){
+      if (project instanceof Project){
+        this.projects.push(project);
+      }
+    }
+
     updateProject(oldProject, newProject){
       for (let i = 0; i < this.projects.length; i++){
         if (oldProject == this.projects[i]){
@@ -33,8 +39,8 @@ export class ClientData {
       }
     }
 
-    deleteProject(projectName) {
-      const index = this.projects.indexOf(projectName, 0);
+    deleteProject(project) {
+      const index = this.projects.indexOf(project, 0);
       if (index > -1){
         this.projects.splice(index, 1);
       }

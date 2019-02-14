@@ -19,26 +19,19 @@ export class ProjectListComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Output() editEvent = new EventEmitter<string>();
-  @Output() selectEvent = new EventEmitter<string>();
-  @Output() deleteEvent = new EventEmitter<string>();
+  @Output() editEvent = new EventEmitter<Project>();
+  @Output() selectEvent = new EventEmitter<Project>();
+  @Output() deleteEvent = new EventEmitter<Project>();
 
-  editProject(project) {
+  editProject(project: Project) {
     this.editEvent.emit(project);
   }
 
-  selectProject(project) {
+  selectProject(project: Project) {
     this.selectEvent.emit(project);
   }
 
-  deleteProject(project) {
-    var keepProjects = [];
-    for (let i = 0; i < this.projects.length; i++) {
-      if (this.projects[i].title != project) {
-        keepProjects.push(this.projects[i]);
-      }
-    }
-    this.projects = keepProjects;
+  deleteProject(project: Project) {
     this.deleteEvent.emit(project);
   }
 

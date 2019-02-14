@@ -8,10 +8,10 @@
   </a>
 
   <form class="form-inline">
-      <button class="btn mr-2" *ngIf="!showProjectList()" (click)="viewProjectList()">Projects</button>
-      <button class="btn" style="text-decoration: none">Logout</button>    
+    <button class="btn mr-2" *ngIf="!showProjectList()" (click)="viewProjectList()">Projects</button>
+    <button class="btn" style="text-decoration: none">Logout</button>
   </form>
-  
+
 </nav>
 
 <div id="content">
@@ -21,8 +21,9 @@
   </div>
 
   <div *ngIf="showEditProject()">
-    <app-project-editor [project]="this.selectedProject" [new]="this.selectedProject==null"
-    (updateEvent)="recieveProjToUpdate($event)" (deleteEvent)="receiveProjToDelete($event)"></app-project-editor>
+    <app-project-editor [project]="this.selectedProject" [newProject]="this.selectedProject==null"
+      (updateEvent)="receiveProjToUpdate($event)" (deleteEvent)="receiveProjToDelete($event)"
+      (addEvent)="receiveProjToAdd($event)"></app-project-editor>
   </div>
 
 

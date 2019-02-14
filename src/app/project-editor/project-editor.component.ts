@@ -14,7 +14,7 @@ export class ProjectEditorComponent implements OnInit {
   @Input() project: Project;
   updatedProject: Project;
 
-  @Input() new: boolean;
+  @Input() newProject: boolean;
   users: User[];
   searchName: string;
   
@@ -27,6 +27,10 @@ export class ProjectEditorComponent implements OnInit {
     this.users = clientData.users;
 
     this.updatedProject = Object.assign({}, this.project);
+
+    if (this.newProject == true){
+      this.updatedProject = new Project();
+    }
   }
 
   getFilteredUsers(){
@@ -59,13 +63,18 @@ export class ProjectEditorComponent implements OnInit {
 
   @Output() updateEvent = new EventEmitter<Project[]>();
   @Output() deleteEvent = new EventEmitter<Project>();
+  @Output() addEvent = new EventEmitter<Project>();
 
   updateProject(){
     this.updateEvent.emit([this.project, this.updatedProject]);
   }
 
+  addProject(){
+    this.addEvent.emit(this.updatedProject);
+  }
+
   deleteProject(){
-    this.deleteEvent.emit(this.project)
+    this.deleteEvent.emit(this.project);
   }
 
 }

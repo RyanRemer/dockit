@@ -23,9 +23,16 @@
       <textarea class="form-control" rows="5" name="description" [(ngModel)]="updatedProject.description"></textarea>
     </div>
 
-    <button type="button" class="btn btn-block" (click)="this.updateProject()">Update
-      Project</button>
-    <button type="button" class="btn btn-block" (click)="this.deleteProject()">Delete Project </button>
+    <div *ngIf="!newProject">
+      <button type="button" class="btn btn-block" (click)="this.updateProject()">Update Project</button>
+      <button type="button" class="btn btn-block" (click)="this.deleteProject()">Delete Project</button>
+    </div>
+
+    <div *ngIf="newProject">
+      <button type="button" class="btn btn-block" (click)="this.addProject()">Add Project</button>
+      <button type="button" class="btn btn-block" (click)="this.deleteProject()">Cancel</button>
+    </div>
+    
 
   </form>
 </div>
