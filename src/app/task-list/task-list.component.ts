@@ -56,7 +56,7 @@ export class TaskListComponent implements OnInit {
   }
 
   getTasks() {
-    if (this.filter == "Overview") {
+    if (this.filter == "All Tasks") {
       return this.tasks;
     }
     return [];

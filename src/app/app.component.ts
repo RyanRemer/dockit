@@ -18,11 +18,7 @@ export class AppComponent {
   taskFilter: string;
 
   constructor() {
-    this.selectedProject = null;
-    this.selectedTask = null;
-    this.editProject = false;
-    this.editTask = false;
-    this.taskFilter = 'Overview';
+    this.viewProjectList();
   }
 
   showProjectList() {
@@ -118,7 +114,7 @@ export class AppComponent {
     this.selectedTask = null;
     this.editProject = false;
     this.editTask = false;
-    this.taskFilter = 'Overview';
+    this.taskFilter = 'All Tasks';
   }
 
   add() {
@@ -126,7 +122,7 @@ export class AppComponent {
       this.selectedTask = null;
       this.editProject = true;
       this.editTask = false;
-      this.taskFilter = 'Overview';
+      this.taskFilter = 'All Tasks';
     }
     else {
       this.selectedProject = null;

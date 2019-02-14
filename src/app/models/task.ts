@@ -9,6 +9,9 @@ export class Task{
     constructor(){
         this.timeSpent = 0.0;
         this.timeLeft = 0.0
+        this.assignedTo = [];
+        this.timeSpent = 0.0;
+        this.timeLeft = 0.0;
     }
 
 }
