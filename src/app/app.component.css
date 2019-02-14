@@ -1,6 +1,6 @@
 #content {
   padding: 20px;
-  height:100%;
+  min-height:100%;
   background-color: var(--lightContrastColor);
 }
 
@@ -36,4 +36,8 @@
 #subTitle {
   font-size: 18px;
   font-weight: normal;
+}
+
+#logo-container{
+  cursor: pointer;
 }

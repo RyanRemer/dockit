@@ -89,19 +89,14 @@ export class AppComponent {
   }
 
   receiveTaskToDelete($event) {
-    ClientData.getInstance().deleteTask(this.selectedProject, $event.title);
+    ClientData.getInstance().deleteTask(this.selectedProject, $event);
     this.editTask = false;
   }
 
   receiveTaskToUpdate($event) {
-    
-    ClientData.getInstance().updateTask(this.selectedProject, $event);
-    for (let j = 0; j < this.selectedProject.tasks.length; j++) {
-      if (this.selectedProject.tasks[j].title == $event.title) {
-        this.selectedProject.tasks[j] = $event;
-      }
-    }
-
+    var oldTask = $event[0];
+    var newTask = $event[1];
+    ClientData.getInstance().updateTask(this.selectedProject, oldTask, newTask);
     this.editTask = false;
   }
 

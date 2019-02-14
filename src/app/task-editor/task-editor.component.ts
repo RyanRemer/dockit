@@ -55,11 +55,11 @@ export class TaskEditorComponent implements OnInit {
     }
   }
 
-  @Output() updateEvent = new EventEmitter<Task>();
+  @Output() updateEvent = new EventEmitter<Task[]>();
   @Output() deleteEvent = new EventEmitter<Task>();
 
   updateTask() {
-    this.updateEvent.emit(this.updatedTask);
+    this.updateEvent.emit([this.task, this.updatedTask]);
   }
 
   deleteTask(task) {

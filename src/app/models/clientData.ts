@@ -53,29 +53,21 @@ export class ClientData {
       return null;
     }
 
-    updateTask(projectName, task) {
-      for (let i = 0; i < this.projects.length; i++) {
-        if (this.projects[i].title == projectName) {
-          for (let j = 0; j < this.projects[i].tasks.length; j++) {
-            if (this.projects[i].tasks[j].title == task.title) {
-              this.projects[i].tasks[j] = task;
-            }
-          }
+    updateTask(project: Project, oldTask, newTask) {
+      var tasks = project.tasks;
+
+      for (let i = 0; i < tasks.length; i++){
+        if (oldTask == tasks[i]){
+          tasks[i] = newTask;
         }
       }
     }
 
-    deleteTask(projectName, taskName) {
-      for (let i = 0; i < this.projects.length; i++) {
-        if (this.projects[i].title == projectName) {
-          var keepTasks = [];
-          for (let j = 0; j < this.projects[i].tasks.length; j++) {
-            if (this.projects[i].tasks[j].title != taskName) {
-              keepTasks.push(this.projects[i].tasks[j])
-            }
-          }
-          this.projects[i].tasks = keepTasks
-        }
+    deleteTask(project: Project, task) {
+      var tasks = project.tasks;
+      var index = tasks.indexOf(task);
+      if (index > -1){
+        tasks.splice(index, 1);
       }
     }
 }
