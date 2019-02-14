@@ -4,7 +4,7 @@
       <div class="progress float-right">
         <div class="progress-bar" [ngStyle]="{'width': getProgress(project) + '%'}"></div>
       </div>
-      <div class="title left clickable" (click)="this.selectProject(project.title)">{{project.title}}</div>
+      <div class="title left clickable" (click)="this.selectProject(project)">{{project.title}}</div>
       <div class="footer btn-group">
         <div class="btn" (click)="this.selectProject(project)">View Tasks</div>
         <div class="btn" (click)="this.editProject(project)">Edit Project</div>
