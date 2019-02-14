@@ -8,6 +8,7 @@ import { Task } from './models/task';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'dockit';
 
@@ -28,35 +29,12 @@ export class AppComponent {
     return false;
   }
 
-  showProjectSideBar() {
-    if (this.selectedProject == null) {
-      return false;
-    }
-    if (this.showEditProject()){
-      return false;
-    }
-    return true;
+  showProject() {
+    return (this.selectedProject != null && this.editProject == false);
   }
 
   showEditProject() {
     return this.editProject;
-  }
-
-  showTaskList() {
-    if (this.selectedProject == null) {
-      return false;
-    }
-    if (this.editProject == true) {
-      return false;
-    }
-    if (this.editTask == true) {
-      return false;
-    }
-    return true;
-  }
-
-  showEditTask() {
-    return this.editTask;
   }
 
   receiveProjToEdit($event) {
@@ -88,38 +66,9 @@ export class AppComponent {
     this.viewProjectList();
   }
 
-  receiveTaskToAdd($event){
-    ClientData.getInstance().addTask(this.selectedProject, $event);
-    this.editTask = false;
-  }
-
-  receiveTaskToEdit($event) {
-    this.selectedTask = $event;
-    this.editTask = true;
-  }
-
-  receiveTaskToDelete($event) {
-    ClientData.getInstance().deleteTask(this.selectedProject, $event);
-    this.editTask = false;
-  }
-
-  receiveTaskToUpdate($event) {
-    var oldTask = $event[0];
-    var newTask = $event[1];
-    ClientData.getInstance().updateTask(this.selectedProject, oldTask, newTask);
-    this.editTask = false;
-  }
-
-  receiveFilterEvent($event) {
-    this.taskFilter = $event;
-  }
-
   viewProjectList() {
     this.selectedProject = null;
-    this.selectedTask = null;
     this.editProject = false;
-    this.editTask = false;
-    this.taskFilter = 'All Tasks';
   }
 
   add() {

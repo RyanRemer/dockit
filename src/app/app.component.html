@@ -11,7 +11,6 @@
     <button class="btn mr-2" *ngIf="!showProjectList()" (click)="viewProjectList()">Projects</button>
     <button class="btn" style="text-decoration: none">Logout</button>
   </form>
-
 </nav>
 
 <div id="content">
@@ -26,26 +25,9 @@
       (addEvent)="receiveProjToAdd($event)"></app-project-editor>
   </div>
 
+  <app-project-view *ngIf="showProject()" [project]="this.selectedProject"></app-project-view>
 
-  <div class="row" *ngIf="showProjectSideBar()" style="width:100%">
-    <div class="col-md-3">
-      <app-project-side-bar [project]="this.selectedProject" (filterEvent)="receiveFilterEvent($event)">
-      </app-project-side-bar>
-    </div>
-
-    <!--TODO: fix showTaskList()-->
-    <div class="col-md-9" *ngIf="!showProjectList() && !showEditTask() && !showEditProject()">
-      <app-task-list [tasks]="this.selectedProject.tasks" [filter]="this.taskFilter"
-        (editEvent)="receiveTaskToEdit($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-list>
-    </div>
-
-    <div class="col-md-9" *ngIf="showEditTask()">
-      <app-task-editor [task]="this.selectedTask" [newTask]="this.selectedTask==null"
-        (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)" (addEvent)="receiveTaskToAdd($event)"></app-task-editor>
-    </div>
-  </div>
-
-  <div *ngIf="showProjectList() || showTaskList()">
+  <div *ngIf="showProjectList()">
     <div class="add-button clickable" (click)="add()">+</div>
   </div>
 </div>

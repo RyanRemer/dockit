@@ -1,3 +1,16 @@
-<p>
-  project-view works!
-</p>
+<div class="row">
+  <div class="col-md-3">
+    <app-project-side-bar [project]="this.project" (filterEvent)="receiveFilterEvent($event)">
+    </app-project-side-bar>
+  </div>
+
+  <div class="col-md-9" *ngIf="!showTaskEditor()">
+    <app-task-list [tasks]="this.filteredTasks" [filter]="this.taskFilter"
+      (editEvent)="receiveTaskToEdit($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-list>
+  </div>
+
+  <div class="col-md-9" *ngIf="showTaskEditor()">
+    <app-task-editor [task]="this.selectedTask" [newTask]="this.selectedTask==null"
+      (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)" (addEvent)="receiveTaskToAdd($event)"></app-task-editor>
+  </div>
+</div>
