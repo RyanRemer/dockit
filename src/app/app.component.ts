@@ -88,6 +88,11 @@ export class AppComponent {
     this.viewProjectList();
   }
 
+  receiveTaskToAdd($event){
+    ClientData.getInstance().addTask(this.selectedProject, $event);
+    this.editTask = false;
+  }
+
   receiveTaskToEdit($event) {
     this.selectedTask = $event;
     this.editTask = true;
@@ -118,15 +123,12 @@ export class AppComponent {
   }
 
   add() {
-    if (this.selectedTask == null) {
-      this.selectedTask = null;
-      this.selectedProject = null;
+    if (this.selectedProject == null) {
       this.editProject = true;
       this.editTask = false;
       this.taskFilter = 'All Tasks';
     }
     else {
-      this.selectedProject = null;
       this.selectedTask = null;
       this.editTask = true;
     }

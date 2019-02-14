@@ -8,6 +8,7 @@ import { ProjectSideBarComponent } from './project-side-bar/project-side-bar.com
 import { TaskListComponent } from './task-list/task-list.component';
 import { ProjectEditorComponent } from './project-editor/project-editor.component';
 import { FormsModule } from '@angular/forms';
+import { ProjectViewComponent } from './project-view/project-view.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     ProjectListComponent,
     ProjectSideBarComponent,
     TaskListComponent,
-    ProjectEditorComponent
+    ProjectEditorComponent,
+    ProjectViewComponent
   ],
   imports: [
     BrowserModule, FormsModule

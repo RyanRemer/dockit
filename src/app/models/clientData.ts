@@ -59,6 +59,10 @@ export class ClientData {
       return null;
     }
 
+    addTask(project: Project, task){
+      project.tasks.push(task);
+    }
+
     updateTask(project: Project, oldTask, newTask) {
       var tasks = project.tasks;
 

@@ -40,8 +40,8 @@
     </div>
 
     <div class="col-md-9" *ngIf="showEditTask()">
-      <app-task-editor [new]="this.selectedTask==null" [task]="this.selectedTask"
-        (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)"></app-task-editor>
+      <app-task-editor [task]="this.selectedTask" [newTask]="this.selectedTask==null"
+        (updateEvent)="receiveTaskToUpdate($event)" (deleteEvent)="receiveTaskToDelete($event)" (addEvent)="receiveTaskToAdd($event)"></app-task-editor>
     </div>
   </div>
 

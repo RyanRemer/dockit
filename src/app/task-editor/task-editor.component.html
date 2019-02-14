@@ -25,6 +25,12 @@
     <label for="timeLeft">Time Left (Hours):</label>
     <input type="number" class="form-control" name="timeLeft" [(ngModel)]="updatedTask.timeLeft">
   </div>
-  <button type="button" class="btn btn-outline-primary btn-block" (click)="updateTask()">Update Task</button>
-  <button type="button" class="btn btn-outline-danger btn-block" (click)="deleteTask()">Delete Task </button>
+  <div *ngIf="!newTask">
+    <button type="button" class="btn btn-outline-primary btn-block" (click)="updateTask()">Update Task</button>
+    <button type="button" class="btn btn-outline-danger btn-block" (click)="deleteTask()">Delete Task</button>
+  </div>
+  <div *ngIf="newTask">
+    <button type="button" class="btn btn-outline-primary btn-block" (click)="addTask()">Add Task</button>
+    <button type="button" class="btn btn-outline-danger btn-block" (click)="deleteTask()">Cancel</button>
+  </div>
 </form>

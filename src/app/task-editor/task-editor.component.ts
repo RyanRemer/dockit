@@ -13,7 +13,7 @@ export class TaskEditorComponent implements OnInit {
   @Input() task: Task;
   updatedTask: Task;
 
-  @Input() new: boolean;
+  @Input() newTask: boolean;
   users: User[];
   searchName:String
 
@@ -23,6 +23,9 @@ export class TaskEditorComponent implements OnInit {
   ngOnInit() {
     this.users = ClientData.getInstance().users;
     this.updatedTask = Object.assign({}, this.task);
+    if (this.newTask){
+      this.updatedTask = new Task();
+    }
   }
 
   getFilteredUsers(){
@@ -57,9 +60,14 @@ export class TaskEditorComponent implements OnInit {
 
   @Output() updateEvent = new EventEmitter<Task[]>();
   @Output() deleteEvent = new EventEmitter<Task>();
+  @Output() addEvent = new EventEmitter<Task>();
 
   updateTask() {
     this.updateEvent.emit([this.task, this.updatedTask]);
+  }
+
+  addTask(){
+    this.addEvent.emit(this.updatedTask);
   }
 
   deleteTask(task) {
