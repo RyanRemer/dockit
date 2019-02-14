@@ -5,11 +5,11 @@
   --darkContrastColor: rgb(77, 77, 77);
   --foregroundColor: black;
 
-  --primaryColor-2:#00acf6;
-  --primaryColor-1:#2ab9f7;
-  --primaryColor0:#50c6f8;
-  --primaryColor1:#82d6fb;
-  --primaryColor2:#b3e6fc;
+  --primaryColor-2:#00699A;
+  --primaryColor-1:#008CCE;
+  --primaryColor0:#009DE7;
+  --primaryColor1:#6CD0FF;
+  --primaryColor2:#E0F7FF;
 
   --secondaryColor0: #f88250;
 
@@ -25,8 +25,8 @@
 }
 
 .btn:hover {
-  background-color: var(--primaryColor-2);
-  border-color: var(--primaryColor-2);
+  background-color: var(--primaryColor-1);
+  border-color: var(--primaryColor-1);
   color: white;
 }
 

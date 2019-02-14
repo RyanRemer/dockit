@@ -10,13 +10,13 @@
 <div *ngIf="this.project.assignedTo.length == 0">
   No collaborators working on this project.</div>
 <div *ngIf="this.project.assignedTo.length == 1">
-  {{this.project.assignedTo.length[0]}} is the only one collaborating on this project.</div>
+  {{this.project.assignedTo[0].name}} is the only one collaborating on this project.</div>
 <div *ngIf="this.project.assignedTo.length == 2">
-  {{this.project.assignedTo[0]}} and {{this.project.assignedTo[1]}} are collaborating on this projects.</div>
+  {{this.project.assignedTo[0].name}} and {{this.project.assignedTo[1].name}} are collaborating on this projects.</div>
 <div *ngIf="this.project.assignedTo.length == 3">
-  {{this.project.assignedTo[0]}}, {{this.project.assignedTo[1]}}, and {{this.project.assignedTo[2]}} are collaborating on this projects.</div>
-<div *ngIf="this.project.assignedTo.legnth > 3">
-  {{this.project.assignedTo[0]}}, {{this.project.assignedTo[1]}}, and {{this.project.assignedTo.length - 2}} more are collaborating on this project.</div>
+  {{this.project.assignedTo[0].name}}, {{this.project.assignedTo[1].name}}, and {{this.project.assignedTo[2].name}} are collaborating on this projects.</div>
+<div *ngIf="this.project.assignedTo.length > 3">
+  {{this.project.assignedTo[0].name}}, {{this.project.assignedTo[1].name}}, and {{this.project.assignedTo.length - 2}} more are collaborating on this project.</div>
 
 <div class="buttons">
   <div class="btn btn-block" (click)="filterTasks('All Tasks')" >All Tasks</div>

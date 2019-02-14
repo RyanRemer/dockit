@@ -6,6 +6,17 @@
   margin-bottom: 20px;
 }
 
+.btn.btn-task{
+  background: var(--backgroundColor);
+  color: var(--primaryColor-1);
+  border-color: var(--primaryColor-1);
+}
+
+.btn.btn-task:hover{
+  background: var(--primaryColor-1);
+  color: var(--backgroundColor);
+}
+
 .float-right{
   width:50%;
   margin-top: 20px;
