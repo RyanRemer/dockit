@@ -1,6 +1,7 @@
 .add {
-  margin-left: 88% !important;
-  width: 12% !important;
+  background-color: var(--backgroundColor);
+  padding: 20px;
+  float:right;
 }
 
 .addtext {
@@ -8,11 +9,11 @@
   font-style: italic;
 }
 
-.bar {
-  width: 100%;
-  background-color: white;
-  padding: 20px;
+.row {
+  margin: 0px;
   margin-bottom: 20px;
+  padding:20px;
+  background-color: var(--backgroundColor);
 }
 
 .btn.btn-task{
@@ -26,12 +27,8 @@
   color: var(--backgroundColor);
 }
 
-.float-right{
-  width:50%;
-  margin-top: 20px;
-}
-
 .progress {
+  margin-top: 20px;
   width: 100%;
 }
 

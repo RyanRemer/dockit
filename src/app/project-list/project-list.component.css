@@ -1,7 +1,8 @@
 
 .add {
-  margin-left: 86% !important;
-  width: 9% !important;
+  background-color: var(--backgroundColor);
+  padding: 20px;
+  float:right;
 }
 
 .addtext {
@@ -9,17 +10,15 @@
   font-style: italic;
 }
 
-.bar {
-  width: 90%;
-  background-color: white;
-  padding: 20px;
-  margin: auto;
+.row {
+  margin: 0px;
   margin-bottom: 20px;
+  padding:20px;
+  background-color: var(--backgroundColor);
 }
 
 .progress{
-  width: 50%;
-  float: right;
+  width: 100%;
   margin-top: 20px;
 }
 

@@ -1,24 +1,30 @@
-<div *ngFor="let project of projects">
+<div class="container">
 
-  <div class="bar">
-      <div class="progress">
-        <div class="progress-bar" [ngStyle]="{'width': getProgress(project) + '%'}"></div>
-      </div>
-        <div class="time" *ngIf="(project.timeLeft() > 0) && (project.timeLeft() <= 1)">1 hour left</div>
-        <div class="time" *ngIf="project.timeLeft() != 1">{{project.timeLeft()}} hours left</div>
+  <div *ngIf="projects.length == 0" class="row">No projects to display</div>
 
-      <div class="title left clickable" (click)="this.selectProject(project)">{{project.title}}</div>
-      <div class="footer btn-group">
-        <div class="btn" (click)="this.selectProject(project)">View Tasks</div>
-        <div class="btn" (click)="this.editProject(project)">Edit Project</div>
-        <div class="btn" (click)="this.deleteProject(project)">Delete Project</div>
+  <div *ngFor="let project of projects">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="title clickable" (click)="this.selectProject(project)">{{project.title}}</div>
+        <div class="footer btn-group">
+          <div class="btn" (click)="this.selectProject(project)">View Tasks</div>
+          <div class="btn" (click)="this.editProject(project)">Edit Project</div>
+          <div class="btn" (click)="this.deleteProject(project)">Delete Project</div>
+        </div>
       </div>
+      <div class="col-md-6">
+        <div class="progress">
+          <div class="progress-bar" [ngStyle]="{'width': getProgress(project) + '%'}"></div>
+        </div>
+        <div class="time" *ngIf="(project.timeLeft() == 0)">Project Complete</div>
+        <div class="time" *ngIf="(project.timeLeft() == 1)">1 hour left</div>
+        <div class="time" *ngIf="(project.timeLeft() > 1)">{{project.timeLeft()}} hours left</div>
+      </div>
+    </div>
   </div>
+  <!-- end of ngFor -->
 
-</div>
-
-<div *ngIf="projects.length == 0" class="bar">No projects to display</div>
-
-<div class="add bar clickable" (click)="this.editProject(null)">
-  <div class="addtext">+ Add Project</div>
+  <div class="add clickable" (click)="this.editProject(null)">
+    <div class="addtext">+ Add Project</div>
+  </div>
 </div>

@@ -1,29 +1,31 @@
-
 <div class="wrapper">
 
-<div class="title"> {{project.title}}</div>
-<div class="small-space"></div>
-<div> {{project.description}}</div>
-
-<div class="space"></div>
-
-<div *ngIf="this.project.assignedTo.length == 0">
-  No collaborators working on this project.</div>
-<div *ngIf="this.project.assignedTo.length == 1">
-  {{this.project.assignedTo[0].name}} is the only one collaborating on this project.</div>
-<div *ngIf="this.project.assignedTo.length == 2">
-  {{this.project.assignedTo[0].name}} and {{this.project.assignedTo[1].name}} are collaborating on this projects.</div>
-<div *ngIf="this.project.assignedTo.length == 3">
-  {{this.project.assignedTo[0].name}}, {{this.project.assignedTo[1].name}}, and {{this.project.assignedTo[2].name}} are collaborating on this projects.</div>
-<div *ngIf="this.project.assignedTo.length > 3">
-  {{this.project.assignedTo[0].name}}, {{this.project.assignedTo[1].name}}, and {{this.project.assignedTo.length - 2}} more are collaborating on this project.</div>
-
-<div class="buttons">
-  <div class="btn btn-block" (click)="filterTasks('All Tasks')" >All Tasks</div>
+  <div class="title"> {{project.title}}</div>
   <div class="small-space"></div>
-  <div class="btn btn-block" (click)="filterTasks('My Tasks')">My Tasks</div>
-  <div class="small-space"></div>
-  <div class="btn btn-block" (click)="filterTasks('Unassigned')">Unassigned</div>
-</div>
+  <div> {{project.description}}</div>
+
+  <div class="space"></div>
+
+  <div *ngIf="this.project.assignedTo.length == 0">
+    No collaborators working on this project.</div>
+  <div *ngIf="this.project.assignedTo.length == 1">
+    {{this.project.assignedTo[0].name}} is the only one collaborating on this project.</div>
+  <div *ngIf="this.project.assignedTo.length == 2">
+    {{this.project.assignedTo[0].name}} and {{this.project.assignedTo[1].name}} are collaborating on this projects.
+  </div>
+  <div *ngIf="this.project.assignedTo.length == 3">
+    {{this.project.assignedTo[0].name}}, {{this.project.assignedTo[1].name}}, and {{this.project.assignedTo[2].name}}
+    are collaborating on this projects.</div>
+  <div *ngIf="this.project.assignedTo.length > 3">
+    {{this.project.assignedTo[0].name}}, {{this.project.assignedTo[1].name}}, and {{this.project.assignedTo.length - 2}}
+    more are collaborating on this project.</div>
+
+  <div class="buttons">
+    <div class="btn btn-block" (click)="filterTasks('All Tasks')">All Tasks</div>
+    <div class="small-space"></div>
+    <div class="btn btn-block" (click)="filterTasks('My Tasks')">My Tasks</div>
+    <div class="small-space"></div>
+    <div class="btn btn-block" (click)="filterTasks('Unassigned')">Unassigned</div>
+  </div>
 
 </div>
