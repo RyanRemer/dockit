@@ -1,4 +1,14 @@
 
+.add {
+  margin-left: 86% !important;
+  width: 9% !important;
+}
+
+.addtext {
+  text-align: right;
+  font-style: italic;
+}
+
 .bar {
   width: 90%;
   background-color: white;
@@ -22,6 +32,11 @@
   color: #50656D;
 }
 
+.time {
+  clear: right;
+  float: right;
+  font-style: italic;
+}
 
 .title {
   font-size: 36px;

@@ -17,4 +17,14 @@ export class Project{
     addTask(newTask) {
       this.tasks.push(newTask);
     }
+
+    timeLeft() {
+      var timeLeft = 0;
+      for (var i = 0; i < this.tasks.length; ++i) {
+        if (this.tasks[i].timeLeft != null) {
+          timeLeft = timeLeft + this.tasks[i].timeLeft;
+        }
+      }
+      return timeLeft;
+    }
 }

@@ -12,7 +12,7 @@ export class TaskListComponent implements OnInit {
   @Input() filter: string;
 
   constructor() {
- }
+  }
 
   ngOnInit() {
   }
@@ -59,6 +59,35 @@ export class TaskListComponent implements OnInit {
     if (this.filter == "All Tasks") {
       return this.tasks;
     }
+
+    if (this.filter == "My Tasks") {
+      var mine = [];
+      for (let i = 0; i < this.tasks.length; ++i) {
+        if (this.tasks[i].assignedTo != null) {
+          let add = false;
+          for (let j = 0; j < this.tasks[i].assignedTo.length; ++j) {
+            if (this.tasks[i].assignedTo[j].name == "Amy Anderson") {
+              add = true;
+            }
+          }
+          if (add == true) {
+            mine.push(this.tasks[i])
+          }
+        }
+      }
+      return mine;
+    }
+
+    if (this.filter == "Unassigned") {
+      var empty = []
+      for (let i = 0; i < this.tasks.length; ++i) {
+        if ((this.tasks[i].assignedTo == null) || (this.tasks[i].assignedTo.length == 0)) {
+          empty.push(this.tasks[i]);
+        }
+      }
+      return empty
+    }
+
     return [];
   }
 

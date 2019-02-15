@@ -66,6 +66,14 @@ export class AppComponent {
     this.viewProjectList();
   }
 
+  receiveAdd() {
+    this.selectedProject = null;
+    this.selectedTask = null;
+    this.editProject = true;
+    this.editTask = false;
+    this.taskFilter = "All Tasks";
+  }
+
   viewProjectList() {
     this.selectedProject = null;
     this.editProject = false;

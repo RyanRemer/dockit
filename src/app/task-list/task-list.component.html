@@ -1,5 +1,5 @@
 
-<div style="overflow-y: auto;"> 
+<div style="overflow-y: auto;">
 <div style="display: inline-block; width: 100%;" *ngFor="let task of getTasks()">
 
   <div class="bar">
@@ -18,6 +18,10 @@
   </div>
 </div>
 
-<div *ngIf="getTasks().length == 0">No tasks to display. (Note: filter application is under construction.)</div>
+<div *ngIf="getTasks().length == 0" class="bar">No tasks to display</div>
+
+<div class="add bar clickable" (click)="this.editTask(null)">
+  <div class="addtext">+ Add Project</div>
+</div>
 
 </div>
