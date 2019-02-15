@@ -26,7 +26,7 @@ export class ProjectEditorComponent implements OnInit {
     var clientData = ClientData.getInstance();
     this.users = clientData.users;
 
-    this.updatedProject = Object.assign({}, this.project);
+    this.updatedProject = Object.assign(new Project(), this.project);
 
     if (this.newProject == true){
       this.updatedProject = new Project();

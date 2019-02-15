@@ -22,7 +22,7 @@ export class TaskEditorComponent implements OnInit {
 
   ngOnInit() {
     this.users = ClientData.getInstance().users;
-    this.updatedTask = Object.assign({}, this.task);
+    this.updatedTask = Object.assign(new Task(), this.task);
     if (this.newTask){
       this.updatedTask = new Task();
     }
