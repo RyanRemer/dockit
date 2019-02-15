@@ -13,14 +13,12 @@ export class ProjectViewComponent implements OnInit {
 
   @Input() project: Project;
   selectedTask: Task;
-  filteredTasks: Task[];
   editTask: boolean;
   taskFilter: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.filteredTasks = this.project.tasks;
     this.selectedTask == null;
     this.editTask = false;
     this.taskFilter = "All Tasks";

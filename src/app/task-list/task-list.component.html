@@ -1,4 +1,15 @@
-<div *ngIf="getTasks().length == 0" class="row">No tasks to display</div>
+<div *ngIf="getTasks().length == 0" class="row">
+  <div *ngIf='filter == "All Tasks"'>
+      There are no tasks for this project.
+  </div>
+  <div *ngIf='filter == "My Tasks"'>
+      There are no tasks assigned to Amy Anderson.
+  </div>
+  <div *ngIf='filter == "Unassigned"'>
+      There are no unassigned tasks for this project.
+  </div>
+  
+</div>
 
 <div *ngFor="let task of getTasks()">
   <div class="row">
